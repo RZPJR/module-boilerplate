@@ -59,6 +59,17 @@ Set an [import map override](https://github.com/joeldenning/import-map-overrides
 
 Refresh the page. Your local code for this module will now be running on https://v3-dashboard.edenfarm.tech/. You may make changes locally and refresh the page to see them.
 
+## Setup for new module
+
+Go to `src/set-public-path.js`, Change `setPublicPath("@vue-mf/boilerplate", 2);` to your module name
+#### Example
+```diff
+    -   setPublicPath("@vue-mf/boilerplate", 2);
+    +   setPublicPath("@vue-mf/module_name", 2);
+```
+
+
+
 ### All Modules Together
 
 Run the root-config project locally:
