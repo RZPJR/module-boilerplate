@@ -1,4 +1,3 @@
-
 # module-boilerplate
 
 This is a boilerplate to create new microfrontend using [single-spa](https://single-spa.js.org).
@@ -67,17 +66,3 @@ Go to `src/set-public-path.js`, Change `setPublicPath("@vue-mf/boilerplate", 2);
     -   setPublicPath("@vue-mf/boilerplate", 2);
     +   setPublicPath("@vue-mf/module_name", 2);
 ```
-
-
-
-### All Modules Together
-
-Run the root-config project locally:
-
-```
-cd root-config
-yarn install
-yarn start
-```
-
-Now follow the steps above for "Override Local to Dev server" for each of the modules you wish to work on.
