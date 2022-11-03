@@ -1,16 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import DogDashboard from "../components/dog-dashboard";
+import Index from "../views/Index.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/view-doggos",
-    name: "dashboard",
-    component: DogDashboard
-  }
-];
+const routes = [{ path: "/Home", component: Index }];
 
 const router = new VueRouter({
   mode: "history",

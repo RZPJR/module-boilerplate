@@ -1,10 +1,19 @@
 <template>
-  <div class="container">
-    <router-view />
-  </div>
+  <v-app>
+    <div id="container">
+      <v-main>
+        <router-view></router-view>
+      </v-main>
+    </div>
+  </v-app>
 </template>
-<style scoped>
-.container {
-  margin-left: var(--navbar-width);
+
+<style>
+
+#container {
+  margin-left: 220px;
 }
 </style>
+
+<script>
+
