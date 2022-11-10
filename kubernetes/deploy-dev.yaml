@@ -44,7 +44,7 @@ spec:
         - name: tz-config
           hostPath:
             path: /usr/share/zoneinfo/Asia/Jakarta
-            type: File          
+            type: File
 ---
 apiVersion: v1
 kind: Service
