@@ -40,6 +40,11 @@ spec:
         volumeMounts:
         - name: tz-config
           mountPath: /etc/localtime
+      volumes:
+        - name: tz-config
+          hostPath:
+            path: /usr/share/zoneinfo/Asia/Jakarta
+            type: File          
 ---
 apiVersion: v1
 kind: Service
@@ -60,7 +65,7 @@ spec:
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa-svc-bp
+  name: hpa-fe-bp
   namespace: fe-bp
 spec:
   scaleTargetRef:
