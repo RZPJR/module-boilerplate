@@ -28,7 +28,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm install
+  npm run serve
 ```
 
 Start the server
