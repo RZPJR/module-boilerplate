@@ -1,11 +1,12 @@
 import http from "../../../services/http";
 
 const actions = {
-    fetchApplicationList: async ({ state, commit }, payload) => {
+    fetchApplicationList: async ({ state, commit, dispatch }, payload) => {
         commit("setPreloadApplicationList", true)
         commit("setApplicationList", [])
         try {
-            let glossary = !state.applicationList.filter.glossary ? '' : state.applicationList.filter.glossary
+            let filter = state.application_list.filter
+            let glossary = filter.glossary
             const response = await http.get('/app', {params: {
                 per_page:100,
                 application: glossary
@@ -21,7 +22,8 @@ const actions = {
         }
     },
 
-    fetchUpdateApplicationDetail: async ({ commit, dispatch}, payload) => {
+    fetchUpdateApplicationDetail: async ({ state, commit, dispatch}, payload) => {        
+        commit("setUpdateApplicationForm", [])
         try {
             const response = await http.get("/app/"+payload.id)
             if(response.data.data) {

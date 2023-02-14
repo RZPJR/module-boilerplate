@@ -81,7 +81,6 @@
         data () {
             return {
                 ConfirmData : {},
-                error:{},
             }
         },
         async created(){
@@ -89,7 +88,8 @@
         },
         computed : {
             ...mapState({
-                form: state => state.application.updateApplication.form
+                form: state => state.application.update_application.form,
+                error: state => state.application.update_application.error
             }),
             application() {
                 if (this.form.application == 1) {
@@ -106,8 +106,11 @@
             }
         },
         methods:{
-             ...mapActions([
+            ...mapActions([
                 "fetchUpdateApplicationDetail",
+            ]),
+            ...mapMutations([
+                "setUpdateApplicationError",
             ]),
             confirmButton() {
                 this.ConfirmData = {
@@ -123,7 +126,7 @@
         mounted() {
             let self = this
             this.$root.$on('event_error', function(err){
-                self.error = err
+                self.$store.commit('setUpdateApplicationError', err)
             });
         },
 

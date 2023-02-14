@@ -1,10 +1,12 @@
 const state = {
-  applicationList: {
+  // Readlist Application
+  application_list: {
     isLoading: false,
+    data: [],
     filter:{
-      glossary: null,
+      glossary: '',
     },
-    table_headers: [
+    table_header: [
         {
             text: 'Application',
             class: 'grey--text text--darken-4',
@@ -30,13 +32,13 @@ const state = {
             sortable: false
         },
     ],
-    data: [],
   },
 
-  updateApplication:{
+  update_application:{
     form:{
         value: '',
     },
+    error: [],
   }
 };
 

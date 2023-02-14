@@ -1,22 +1,26 @@
 const mutations = {
   // #region Readlist Application
     setApplicationList: function(state, payload) {
-      state.applicationList.data = payload;
+      state.application_list.data = payload;
       return state;
     },
     setPreloadApplicationList: function(state, payload) {
-      state.applicationList.isLoading = payload;
+      state.application_list.isLoading = payload;
       return state;
     },
-    setGlossaryFilterList: function(state, payload){
-      state.applicationList.filter.glossary = payload;
+    setApplicationListFilter: function(state, payload){
+      state.application_list.filter = payload;
       return state;
     },
     // #endregion Readlist Application
 
     // #region Update Application
     setUpdateApplicationForm: function(state, payload){
-      state.updateApplication.form = payload
+      state.update_application.form = payload
+      return state;
+    },
+    setUpdateApplicationError: function(state, payload){
+      state.update_application.error = payload
       return state;
     }
     // #endregion Update Application
