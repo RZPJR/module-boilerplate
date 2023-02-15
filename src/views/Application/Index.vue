@@ -72,6 +72,7 @@
     export default {
         name: "ConfigurationApplication",
         created() {
+            this.$store.commit("setDefaultApplicationListFilter")
             this.fetchApplicationList()
         },
         computed:{
@@ -85,6 +86,7 @@
             ]),
             ...mapMutations([
                 "setApplicationListFilter",
+                "setDefaultApplicationListFilter",
             ]),
             AppsSelected(d) {
                 this.$store.commit("setApplicationListFilter", {

@@ -84,6 +84,7 @@
             }
         },
         async created(){
+            this.$store.commit('setDefaultUpdateApplicationForm')
             await this.fetchUpdateApplicationDetail({ id: this.$route.params.id })
         },
         computed : {
@@ -111,6 +112,7 @@
             ]),
             ...mapMutations([
                 "setUpdateApplicationError",
+                "setDefaultUpdateApplicationForm",
             ]),
             confirmButton() {
                 this.ConfirmData = {
