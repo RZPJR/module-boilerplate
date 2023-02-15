@@ -72,6 +72,7 @@
     export default {
         name: "ConfigurationApplication",
         created() {
+            // To ensure vuex is clean when page is loaded
             this.$store.commit("setDefaultApplicationListFilter")
             this.fetchApplicationList()
         },
@@ -89,6 +90,7 @@
                 "setDefaultApplicationListFilter",
             ]),
             AppsSelected(d) {
+                // Use this to update certain value by key inside "Filter" object without creating multiple mutation
                 this.$store.commit("setApplicationListFilter", {
                     ...this.application_list.filter,
                     glossary: '',

@@ -1,6 +1,7 @@
 import http from "../../../services/http";
 
 const actions = {
+    // GET Application list
     fetchApplicationList: async ({ state, commit, dispatch }, payload) => {
         commit("setPreloadApplicationList", true)
         commit("setApplicationList", [])
@@ -22,6 +23,7 @@ const actions = {
         }
     },
 
+    // GET Application Detail
     fetchUpdateApplicationDetail: async ({ state, commit, dispatch}, payload) => {        
         commit("setUpdateApplicationForm", [])
         try {

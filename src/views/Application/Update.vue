@@ -84,6 +84,7 @@
             }
         },
         async created(){
+            // To ensure vuex is clean when page is loaded
             this.$store.commit('setDefaultUpdateApplicationForm')
             await this.fetchUpdateApplicationDetail({ id: this.$route.params.id })
         },
